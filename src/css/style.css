@@ -32,7 +32,6 @@ button:hover {
 /*  Reset */
 body {
 	background-color: #FB1B1B;
-	padding: 2em;
 }
 
 #app {
@@ -40,11 +39,10 @@ body {
 	justify-content: center;
 }
 
-.container {
+.container-login-page {
 	max-width: 700px;
 	width: 80vw;
-	height: 80vh;
-	border-radius: 50px;
+	height: 100vh;
 	text-align: center;
 	display:flex;
 	flex-wrap: wrap;
@@ -55,9 +53,7 @@ body {
 header {
  	width: 100%;
 }
-.pokemons {
-  	width: 100%;
-}
+
 .buttons {
   	width: 100%;
 	padding: 1.5em;
@@ -96,4 +92,41 @@ header {
 }
 .container-login p {
 	font-weight: 800;
+}
+.div-button-logout {
+	display: flex;
+	justify-content: flex-end;
+}
+.button-logout {
+	align-self: flex-end;
+}
+.container-lista {
+	width: 100vw;
+	padding: 10;
+	text-align: center;
+	display:flex;
+	flex-wrap: wrap;
+	background-color: #FB1B1B;
+}
+
+.card-todo {
+	background-color: #DFDFDF;
+	margin: 4px;
+	padding: 4px;
+	border-radius: 10px;
+	width: 200px;
+	height: 100px;
+	border: 2px solid #000000
+}
+.card-add {
+	background-color: #DFDFDF;
+	margin: 4px;
+	padding: 4px;
+	border-radius: 10px;
+	text-align: center;
+	font-weight: 900;
+	font-size: 1.5em;
+	width: 200px;
+	height: 100px;
+	border: 2px solid #000000
 }

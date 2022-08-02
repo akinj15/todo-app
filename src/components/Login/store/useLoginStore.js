@@ -15,10 +15,8 @@ export const useLogin = defineStore('Login', {
         async login (obj) {
             let user = obj ?? this.user
             let url = `/user/${user.user_name}/${user.passwd}` 
-            console.log(url)
             await http.getData(url).then( response => {
                 this.user = response.data[0]
-                console.log(this.user)
             }).catch(e => console.log(e))
             return
         },

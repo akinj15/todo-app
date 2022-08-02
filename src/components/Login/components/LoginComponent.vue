@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-login-page">
         <div class="container-login">
             <p>login</p>
             <input type="text" v-model="loginStore.user.user_name">

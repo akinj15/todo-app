@@ -8,11 +8,10 @@ export default {
         const router = useRouter()
 
         const login = async () => {
-            if(await loginStore.login()){
-                
-                router.push({path: '/todos'})
-                return
-            }
+            await loginStore.login()
+            loginStore.user.passwd = await ''
+            localStorage.setItem('user',JSON.stringify(loginStore.user) )
+            router.push({path: '/todos'})
         }
 
         return {

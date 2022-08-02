@@ -1,21 +1,28 @@
 import { useRoute , useRouter } from "vue-router";
-import { useLogin } from "../store/useLoginStore"
+import { useTodo } from "../store/useTodoStore"
 
 export default {
     setup () {
-        const loginStore = useLogin()
+        const todoStore = useTodo()
         const route = useRoute()
         const router = useRouter()
 
-        const login = async () => {
-            if(loginStore.user.user_name && loginStore.user.passwd )
-            await loginStore.login()
-            router.push({path: '/'})
+        const user = JSON.parse(localStorage.getItem('user'))
+        const created = async () => { 
+            await todoStore.getTodos(user)
         }
 
+        const adcionarTodo = async () => {
+            await todoStore.postTodo(user)
+        }
+        const concluirTodo = async (item) => {
+            
+            await todoStore.putTodo()
+        }
+        created()
         return {
-            login,
-            loginStore
+            todoStore,
+            adcionarTodo,
         }
     }
 }
