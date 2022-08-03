@@ -2,9 +2,9 @@
     <div class="container-login-page">
         <div class="container-login">
             <p>login</p>
-            <input type="text" v-model="loginStore.user.user_name">
+            <input type="text" v-model="user">
             <p>password</p>
-            <input type="password" v-model="loginStore.user.passwd">
+            <input type="password" v-model="password">
             <button class="button" @click="login">entrar</button>
         </div>
     </div>

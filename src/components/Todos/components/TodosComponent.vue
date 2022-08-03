@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="div-button-logout">
-            <button class="button button-logout">logout</button>
+            <button class="button button-logout" @click="logout">logout</button>
         </div>
         <div class="todo" >
             <input type="text" v-model="todoStore.todo.title">
@@ -20,6 +20,8 @@
                 </div>
                 <div class="card-footer">
                     <input  type="checkbox" v-model="item.todo_done" name="" id="">
+                    <button class="" @click="deletarTodo(item)">deletar</button>
+                    <button class="" @click="concluirTodo(item)">{{!item.todo_done ? 'concluir' : 'refazer'}}</button>
                 </div>
             </div>
         </div>

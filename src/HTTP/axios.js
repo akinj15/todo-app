@@ -17,7 +17,7 @@ export const postData = async(url, data) => {
 }
 
 export const putData = async(url, data) => {
-    return API.put(url, data);
+    return API.patch(url, data);
 }
 
 export const deleteData = async(url) => {
