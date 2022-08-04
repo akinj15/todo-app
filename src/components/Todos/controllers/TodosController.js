@@ -20,6 +20,9 @@ export default {
 
         const adcionarTodo = async () => {
             await todoStore.postTodo(user)
+            todoStore.todo.title = ''
+            todoStore.todo.todo_description = ''
+            todoStore.todo.todo_done = false
         }
         const concluirTodo = async (item) => {
             let obj = {

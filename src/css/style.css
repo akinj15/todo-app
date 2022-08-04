@@ -1,132 +1,145 @@
+/* cores **** */
+/* 
+	#000000
+	#03045E
+	#023E8A
+	#0077B6 // bacground
+	#0096C7
+	#00B4D8
+	#48CAE4
+	#90E0EF
+	#ADE8F4
+	#CAF0F8
+	#ffffff
+*/
 * {
-	margin : 0;
-	padding : 0;
+	font-family: 'Montserrat', sans-serif;
+	padding: 0;
+	margin: 0;
 	text-decoration: none;
+	color:#03045E;
 }
-input{
-	border: 2px solid #FB1B1B;
-	border-radius: 5px;
-	padding: 0.6em 0.2em;
-	box-sizing: content-box;
-	font-size: 1.1em;
-	background-color: none;
+body{
+	background: #0077B6;
+	max-width: 100vw;
 }
-input:focus{
-	border: 2px solid #FB1B1B;
-	border-radius: 5px;
-	/* box-shadow: 1px 1px 2px #FB1B1B; */
-	padding: 0.6em 0.2em;
-	font-size: 1.1em;
-	background-color: none;
+
+a {
+	text-decoration: underline;
+	cursor: pointer;
 }
+
+/* estilizando inputs */
+
+input {
+	padding: 0 10px;
+	border: 2px solid #0096C7 ;
+	border-radius: 10px;
+	height: 32px;
+	margin: 5px 0;
+	transition: 0.5s ease-in-out;
+}
+input:focus {
+	border: 2px solid #0096C7 ;
+	border-radius: 10px;
+	box-shadow: #48CAE4 0px 4px 5px, #48CAE4 0px 3px 3px;
+	outline: none;
+}
+
+/* estilizando botoes */
 button {
-	background-color: none;
-	border: none;
+	height: 36px;
+	border: 2px solid #0096C7;
+	border-radius: 10px;
+	font-weight: bold;
+	margin: 10px 0;
+	padding: 8px;
+	background-color: #ffffff;
 }
+
 button:hover {
-	background-color: none;
-	box-shadow: none;
-	border: none;
+	border: 2px solid #023E8A;
+	font-weight: bold;
+	background-color: #ADE8F4;
+	transition: 0.2s ease-in-out;
 }
-
-/*  Reset */
-body {
-	background-color: #FB1B1B;
-}
-
-#app {
-	display:flex;
-	justify-content: center;
-}
-
-.container-login-page {
-	max-width: 700px;
-	width: 80vw;
-	height: 100vh;
-	text-align: center;
-	display:flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	background-color: #FFFFFF;
-}
-
+/* header configuração */
 header {
- 	width: 100%;
+	background-color: #03045E;
+	width: 100vw;
+	height: 60px;
 }
 
-.buttons {
-  	width: 100%;
-	padding: 1.5em;
-}
-.button {
-	margin: 1em;
-	padding : 10px;
-	background-color: #DFDFDF;
-	border-radius: 14px;
-	border: 2px solid #000000;
-	font-size: 1em;
-	font-weight: 600;
-	color: #000000;
-}
-.button:hover {
-	
-	padding : 10px;
-	background-color: #DFDFDF;
-	border-radius: 14px;
-	border: 2px solid #000000;
-	font-size: 1em;
-	font-weight: 600;
-	color: #000000;
+.logout{
+	margin-right: 30px;
+	float: right;
+	padding-right:10px;
 }
 
-/* login page */
+.titulo {
+	float: left;
+	padding:10px;
+	z-index: 3;
+}
+.titulo h2 {
+	color: #ffffff;
 
-.container-login {
+}
+
+/* container principal */
+.container {
+	width: 100%;
+	height: 100vh;
+}
+/* area do login */
+#card-login {
+	height: 100%;
+	margin: 0 auto;
+	max-width: 700px;
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: center;
 }
-.container-login input {
-	margin: 1em 0;
+
+.card-items {
+	width: 100%;
+	margin-top: 10px;
 	text-align: center;
-}
-.container-login p {
-	font-weight: 800;
-}
-.div-button-logout {
-	display: flex;
-	justify-content: flex-end;
-}
-.button-logout {
-	align-self: flex-end;
-}
-.container-lista {
-	width: 100vw;
-	padding: 10;
-	text-align: center;
-	display:flex;
-	flex-wrap: wrap;
-	background-color: #FB1B1B;
 }
 
-.card-todo {
-	background-color: #DFDFDF;
-	margin: 4px;
-	padding: 4px;
-	border-radius: 10px;
-	width: 200px;
-	height: 100px;
-	border: 2px solid #000000
+/* area principal */
+
+main {
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
-.card-add {
-	background-color: #DFDFDF;
-	margin: 4px;
-	padding: 4px;
+
+/* adcionar todo */
+
+#adcionar-todo {
+	clear: both;
+	display: flex;
+	align-items:flex-end ;
+	justify-content: center;
+	width: 100vw;
+}
+
+#adcionar-todo button {
+	margin: 5px;
+}
+.todos {
+	width: 80vw;
+	border:2px solid #03045E ;
 	border-radius: 10px;
-	text-align: center;
-	font-weight: 900;
-	font-size: 1.5em;
-	width: 200px;
-	height: 100px;
-	border: 2px solid #000000
+	margin: 10px 0;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.todo-text {
+	width: 70%;
 }

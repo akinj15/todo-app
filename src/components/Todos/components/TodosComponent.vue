@@ -1,30 +1,56 @@
 <template>
+    <header>
+        <div class="titulo">
+            <h2>TAREFAS</h2>
+        </div>
+        <div class="logout">
+            <button @click="logout">logout</button>
+        </div>
+    </header>
     <div class="container">
-        <div class="div-button-logout">
-            <button class="button button-logout" @click="logout">logout</button>
+        <div id="adcionar-todo" >
+            <div>
+                <p>titulo</p>
+                <input type="text" v-model="todoStore.todo.title">
+            </div>
+            <div>
+                <p>descição</p>
+                <input type="text" v-model="todoStore.todo.todo_description">
+            </div>
+            <button class="" @click="adcionarTodo">Adicionar todo</button>
         </div>
-        <div class="todo" >
-            <input type="text" v-model="todoStore.todo.title">
-            <input type="text" v-model="todoStore.todo.todo_description">
-            <input  type="checkbox" v-model="todoStore.todo.todo_done" name="" id="">
-            <button class="button button-logout" @click="adcionarTodo">Adicionar todo</button>
-
-        </div>
-        <div class="container-lista">
-            <div class="card-todo"  v-for="item in todoStore.todos" key="item.todo_id">
-                <div class="card-header">
-                    {{item.title}}
+        <main>
+            <div class="todos"  v-for="item in todoStore.todo_pendentes" key="item.todo_id">
+                <div class="todo-text">
+                    <h4>
+                        {{item.title}}
+                    </h4>
+                    <p>
+                        {{item.todo_description}}
+                    </p>
                 </div>
-                <div class="card-body">
-                    {{item.todo_description}}
-                </div>
-                <div class="card-footer">
-                    <input  type="checkbox" v-model="item.todo_done" name="" id="">
+                <div class="">
+                    <input disable type="checkbox" v-model="item.todo_done" name="" id="">
                     <button class="" @click="deletarTodo(item)">deletar</button>
                     <button class="" @click="concluirTodo(item)">{{!item.todo_done ? 'concluir' : 'refazer'}}</button>
                 </div>
             </div>
-        </div>
+            <div class="todos"  v-for="item in todoStore.todo_concluidas" key="item.todo_id">
+                <div class="todo-text">
+                    <h4>
+                        {{item.title}}
+                    </h4>
+                    <p>
+                        {{item.todo_description}}
+                    </p>
+                </div>
+                <div class="">
+                    <input disable type="checkbox" v-model="item.todo_done" name="" id="">
+                    <button class="" @click="deletarTodo(item)">deletar</button>
+                    <button class="" @click="concluirTodo(item)">{{!item.todo_done ? 'concluir' : 'refazer'}}</button>
+                </div>
+            </div>            
+        </main>
     </div>
 </template>
 <script>

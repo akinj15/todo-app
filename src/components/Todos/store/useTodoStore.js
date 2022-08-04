@@ -12,7 +12,12 @@ export const useTodo = defineStore('Todo', {
         todos: []
     }),
     getters: {
-        // double: (state) => state.count * 2,
+        todo_concluidas: (state) => {
+            return state.todos.filter(item => item.todo_done)
+        },
+        todo_pendentes: (state) => {
+            return state.todos.filter(item => item.todo_done == false)
+        },  
     },
     actions: {
         async getTodos (obj) {
@@ -43,7 +48,6 @@ export const useTodo = defineStore('Todo', {
                 index = this.todos.findIndex(item => item.todo_id == response.data[0].todo_id);
                 console.log(index)
                 this.todos[index] = response.data[0]
-                // this.todos.push(response.data[0])
             }).catch(e => console.log(e))
             return
         },
