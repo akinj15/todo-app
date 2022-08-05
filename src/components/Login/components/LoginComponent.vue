@@ -14,7 +14,7 @@
             </div>
             <div  class="card-items">
                 <button class="" @click="login" @keypress.enter="login">entrar</button><br>
-                <a>cadastrar</a>
+                <a @click="cadastro">cadastrar</a>
             </div>
         </div>
     </div>

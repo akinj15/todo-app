@@ -33,9 +33,12 @@ export default {
             localStorage.setItem('user',JSON.stringify(loginStore.user) )
             router.push({path: '/todos'})
         }
-
+        const cadastro = async () => {
+            router.push({path:'/cadastro'})
+        }
         return {
             login,
+            cadastro,
             loginStore,
             user,
             password,

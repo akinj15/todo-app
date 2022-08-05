@@ -20,7 +20,7 @@
             <button class="" @click="adcionarTodo">Adicionar todo</button>
         </div>
         <main>
-            <div class="todos"  v-for="item in todoStore.todo_pendentes" key="item.todo_id">
+            <div class="todos" @dblclick="concluirTodo(item)" v-for="item in todoStore.todo_pendentes" key="item.todo_id">
                 <div class="todo-text">
                     <h4>
                         {{item.title}}
@@ -30,12 +30,10 @@
                     </p>
                 </div>
                 <div class="">
-                    <input disable type="checkbox" v-model="item.todo_done" name="" id="">
                     <button class="" @click="deletarTodo(item)">deletar</button>
-                    <button class="" @click="concluirTodo(item)">{{!item.todo_done ? 'concluir' : 'refazer'}}</button>
                 </div>
             </div>
-            <div class="todos"  v-for="item in todoStore.todo_concluidas" key="item.todo_id">
+            <div class="todos"  v-for="item in todoStore.todo_concluidas" @dblclick="refazerTodo(item)" key="item.todo_id" style="background-color: rgb(6, 214, 160, 0.5);">
                 <div class="todo-text">
                     <h4>
                         {{item.title}}
@@ -45,9 +43,7 @@
                     </p>
                 </div>
                 <div class="">
-                    <input disable type="checkbox" v-model="item.todo_done" name="" id="">
                     <button class="" @click="deletarTodo(item)">deletar</button>
-                    <button class="" @click="concluirTodo(item)">{{!item.todo_done ? 'concluir' : 'refazer'}}</button>
                 </div>
             </div>            
         </main>

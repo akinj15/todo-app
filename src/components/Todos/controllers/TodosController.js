@@ -35,6 +35,17 @@ export default {
             await todoStore.putTodo(obj)
             created()
         }
+        const refazerTodo = async (item) => {
+            let obj = {
+                todo_id: item.todo_id,
+                user_id: JSON.parse(localStorage.getItem('user')).user_id,
+                title: item.title,
+                todo_description: item.todo_description,
+                todo_done : !item.todo_done
+            }
+            await todoStore.putTodo(obj)
+            created()
+        }
         const deletarTodo = async (item) => {
             if(await todoStore.deleteTodo(item)){
                 await created()
@@ -49,6 +60,7 @@ export default {
             adcionarTodo,
             deletarTodo,
             concluirTodo,
+            refazerTodo,
             logout,
         }
     }

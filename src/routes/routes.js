@@ -6,7 +6,7 @@ import Login from '../views/LoginView.vue'
 
 //import de components
 import login from '../components/Login'
-
+import Cadastro from '../components/Cadastro';
 
 import todos from '../components/Todos'
 
@@ -19,6 +19,7 @@ const routes = [
         component: Login,
         children: [
             ...login.routes,
+            ...Cadastro.routes,
         ]
     },
     {
